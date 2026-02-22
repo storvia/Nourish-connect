@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendor Dashboard | FoodSupport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <h2>FoodSupport</h2>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="vendor.html" class="active">Dashboard</a></li>
+        <li><a href="#redeemSection">Redeem Voucher</a></li>
+        <li><a href="#historySection">Redemption History</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-content">
+
+    <!-- ===== Header ===== -->
+    <header class="dashboard-header">
+        <h1>Vendor Dashboard</h1>
+        <div class="user-info">
+            <span id="vendorName">Welcome</span>
+        </div>
+    </header>
+
+    <!-- ===== Wallet Summary ===== -->
+    <section class="summary-cards">
+
+        <div class="card">
+            <h3 id="walletBalance">₦0</h3>
+            <p>Wallet Balance</p>
+        </div>
+
+        <div class="card">
+            <h3 id="totalRedemptions">0</h3>
+            <p>Total Redemptions</p>
+        </div>
+
+    </section>
+
+    <!-- ===== Redeem Voucher ===== -->
+    <section id="redeemSection" class="dashboard-section">
+        <h2>Redeem Voucher</h2>
+
+        <form id="redeemForm" class="form-card">
+            <div class="form-group">
+                <label for="voucherCode">Enter Voucher Code</label>
+                <input type="text" id="voucherCode" required>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Redeem
+            </button>
+        </form>
+    </section>
+
+    <!-- ===== Redemption History ===== -->
+    <section id="historySection" class="dashboard-section">
+        <h2>Redemption History</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voucher Code</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="redemptionHistory">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/vendor.js"></script>
+
+</body>
+</html>
