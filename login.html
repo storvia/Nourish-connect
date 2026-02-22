@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | FoodSupport</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Navigation Bar ===== -->
+<div class="navbar">
+    <h2>FoodSupport</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+    </ul>
+</div>
+
+<!-- ===== Login Form Section ===== -->
+<div class="section light-bg">
+    <div class="form-card">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Login</button>
+        </form>
+    </div>
+</div>
+
+<!-- ===== Footer Section ===== -->
+<div class="footer">
+    <p>&copy; 2026 FoodSupport | All rights reserved.</p>
+</div>
+
+<script src="js/auth.js"></script>
+<script>
+    // Handle login form submission
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+
+        // Attempt login
+        const isLoggedIn = loginUser(email, password);
+        if (!isLoggedIn) {
+            alert("Invalid login credentials, please try again.");
+        }
+    });
+</script>
+
+</body>
+</html>
