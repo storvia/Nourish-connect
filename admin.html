@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel | FoodSupport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <h2>FoodSupport</h2>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="admin.html" class="active">Dashboard</a></li>
+        <li><a href="#beneficiariesSection">Beneficiaries</a></li>
+        <li><a href="#vendorsSection">Vendors</a></li>
+        <li><a href="#voucherSection">Issue Voucher</a></li>
+        <li><a href="#donationsSection">Donations</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main-content">
+
+    <!-- ===== Header ===== -->
+    <header class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <div class="user-info">
+            <span id="adminName">Welcome Admin</span>
+        </div>
+    </header>
+
+    <!-- ===== Stats ===== -->
+    <section class="summary-cards">
+
+        <div class="card">
+            <h3 id="totalRaised">₦0</h3>
+            <p>Total Raised</p>
+        </div>
+
+        <div class="card">
+            <h3 id="totalFamilies">0</h3>
+            <p>Total Beneficiaries</p>
+        </div>
+
+        <div class="card">
+            <h3 id="totalVendors">0</h3>
+            <p>Total Vendors</p>
+        </div>
+
+        <div class="card">
+            <h3 id="totalVouchers">0</h3>
+            <p>Vouchers Issued</p>
+        </div>
+
+    </section>
+
+    <!-- ===== Beneficiaries ===== -->
+    <section id="beneficiariesSection" class="dashboard-section">
+        <h2>Pending Beneficiaries</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="beneficiariesTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== Vendors ===== -->
+    <section id="vendorsSection" class="dashboard-section">
+        <h2>Pending Vendors</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shop Name</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="vendorsTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== Issue Voucher ===== -->
+    <section id="voucherSection" class="dashboard-section">
+        <h2>Issue Voucher</h2>
+
+        <form id="voucherForm" class="form-card">
+            <div class="form-group">
+                <label>Select Beneficiary</label>
+                <select id="beneficiarySelect" required></select>
+            </div>
+
+            <div class="form-group">
+                <label>Amount (₦)</label>
+                <input type="number" id="voucherAmount" required min="100">
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Generate Voucher
+            </button>
+        </form>
+    </section>
+
+    <!-- ===== Donations ===== -->
+    <section id="donationsSection" class="dashboard-section">
+        <h2>All Donations</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Donor</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="donationsTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+
+</body>
+  </html>
