@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beneficiary Dashboard | FoodSupport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+    <div class="sidebar-logo">
+        <h2>FoodSupport</h2>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li><a href="beneficiary.html" class="active">Dashboard</a></li>
+        <li><a href="#voucherSection">My Vouchers</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+    </ul>
+</aside>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="main-content">
+
+    <!-- ===== Header ===== -->
+    <header class="dashboard-header">
+        <h1>Beneficiary Dashboard</h1>
+        <div class="user-info">
+            <span id="beneficiaryName">Welcome</span>
+        </div>
+    </header>
+
+    <!-- ===== Verification Status ===== -->
+    <section class="dashboard-section">
+        <div class="status-card">
+            <h2>Verification Status</h2>
+            <p id="verificationStatus">Pending</p>
+        </div>
+    </section>
+
+    <!-- ===== Active Voucher ===== -->
+    <section id="voucherSection" class="dashboard-section">
+        <h2>Active Voucher</h2>
+
+        <div id="activeVoucherContainer">
+            <p>No active voucher available.</p>
+        </div>
+    </section>
+
+    <!-- ===== Voucher History ===== -->
+    <section class="dashboard-section">
+        <h2>Voucher History</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Expiry</th>
+                    </tr>
+                </thead>
+                <tbody id="voucherHistory">
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= SCRIPTS ================= -->
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/beneficiary.js"></script>
+
+</body>
+</html>
